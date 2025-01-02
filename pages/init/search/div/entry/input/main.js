@@ -8,6 +8,7 @@ export default function input(){
         }`
 
     const input = cE("input", style)
+    input.placeholder = "Pesquise"
     input.oninput = function a(e){
         const value = e.target.value
         const options = e.target.parentElement.parentElement.children[1].children
@@ -15,7 +16,7 @@ export default function input(){
             for(let j = 0; j < options[i].innerHTML.length - value.length + 1; j++){
                 let optionsText = ""
                 for(let k = j; k < value.length + j; k++){
-                    optionsText += options[i].innerHTML[k]
+                    optionsText += options[i].children[2].innerHTML[k]
                 }
                 if(value == ""){
                     options[i].style.maxHeight = "100%"

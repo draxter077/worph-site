@@ -8,6 +8,6 @@ export default function input(){
         }`
     const input = cE("input", style)
     input.type = "file"
-    input.name = "imageFile"
+    input.name = "file"
     return(input)
 }

@@ -8,13 +8,15 @@ export default function button(){
         :hover{
             box-shadow: 0px 0px 5px 0px black;
         }`
+        
     const button = cE("button", style)
     button.innerHTML = "Upload"
     button.onclick = function a(Event){
         const formData = new FormData();
-        const file = Event.target.parentElement.children[0].files[0]
+        const input = Event.target.parentElement.children[0]
+        const file = input.files[0]
         if(file != undefined){
-            formData.append('imageFile', file);
+            formData.append("file", file);
             axios.post('//localhost:5001/postFile', formData, {headers: {'Content-Type': 'multipart/form-data'}})
                 .then(response => {console.log(response)})
                 .catch(error => {console.log(error)})

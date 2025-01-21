@@ -8,12 +8,21 @@ export default function download(){
     const download = cE("img", style)
     download.src = "./download.webp"
     download.onclick = function a(){
-        axios.get("//localhost:5001/getFile")
+        const fileName = "teste.pdf"
+        const fileExt = fileName.split(".")[1]
+        axios.get("//localhost:5001/getFile", {responseType: "blob"})
             .then(response => {
-                var blob = new Blob([response.data], {type: 'application/pdf'});
+                let type;
+                if(fileExt == "xlsx"){
+                    type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                }
+                else if(fileExt == "pdf"){
+                    type = "application/pdf"
+                }
+                const file = new File([response.data], fileName, {type: type})
                 var link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = 'imageFile.pdf';
+                link.href = window.webkitURL.createObjectURL(file);
+                link.download = fileName;
                 link.click();
             })
             .catch(error => {window.alert(error)})

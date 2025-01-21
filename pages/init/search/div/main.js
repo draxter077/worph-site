@@ -10,6 +10,9 @@ export default function div(){
             padding: 20px;
             box-shadow: 0px 0px 5px 0px black;
             border-radius: 15px;
+        }
+        :responsive{
+            width: 100%;
         }`
 
     const div = cE("div", style)

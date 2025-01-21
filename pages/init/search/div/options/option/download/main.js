@@ -1,3 +1,5 @@
+import mimeType from "./mimeType.js"
+
 export default function download(){
     let style = `
         {
@@ -12,14 +14,7 @@ export default function download(){
         const fileExt = fileName.split(".")[1]
         axios.get("//localhost:5001/getFile", {responseType: "blob"})
             .then(response => {
-                let type;
-                if(fileExt == "xlsx"){
-                    type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                }
-                else if(fileExt == "pdf"){
-                    type = "application/pdf"
-                }
-                const file = new File([response.data], fileName, {type: type})
+                const file = new File([response.data], fileName, {type: mimeType[fileExt]})
                 var link = document.createElement('a');
                 link.href = window.webkitURL.createObjectURL(file);
                 link.download = fileName;

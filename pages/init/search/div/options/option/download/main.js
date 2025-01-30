@@ -12,7 +12,7 @@ export default function download(){
     download.onclick = function a(){
         const fileName = "teste.pdf"
         const fileExt = fileName.split(".")[1]
-        axios.post("http://192.168.0.80:5001/getFile", {responseType: "blob"})
+        axios.post("http://192.168.0.80:5001/getFile", {}, {responseType: "blob"})
             .then(response => {
                 const file = new File([response.data], fileName, {type: mimeType[fileExt]})
                 var link = document.createElement('a');

@@ -17,7 +17,7 @@ export default function button(){
         const file = input.files[0]
         if(file != undefined){
             formData.append("file", file);
-            axios.post('//localhost:5001/postFile', formData, {headers: {'Content-Type': 'multipart/form-data'}})
+            axios.post('http://192.168.0.80:5001/postFile', formData, {headers: {'Content-Type': 'multipart/form-data'}})
                 .then(response => {console.log(response)})
                 .catch(error => {console.log(error)})
         }

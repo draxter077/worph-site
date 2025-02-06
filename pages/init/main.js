@@ -1,5 +1,5 @@
-import upload from "./upload/main.js"
-import search from "./search/main.js"
+import top from "./top/main.js"
+import body from "./body/main.js"
 
 export default function init(){
     let style = `
@@ -8,11 +8,10 @@ export default function init(){
             flex-direction: column;
             height: 100dvh;
             width: 100%;
-            padding: 20px;
         }`
 
     const init = cE("div", style)
-    init.appendChild(upload())
-    init.appendChild(search())
+    init.appendChild(top())
+    init.appendChild(body())
     return(init)
 }

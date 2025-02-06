@@ -2,7 +2,6 @@ export default function input(){
     let style = `
         {
             width: 100%;
-            margin: 0px 0px 10px 0px;
             border: 1px solid black;
             padding: 5px 10px;
         }`

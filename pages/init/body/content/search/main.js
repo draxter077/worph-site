@@ -1,4 +1,5 @@
-import div from "./div/main.js"
+import top from "./top/main.js"
+import options from "./options/main.js"
 
 export default function search(){
     let style = `
@@ -9,6 +10,7 @@ export default function search(){
         }`
 
     const search = cE("div", style)
-    search.appendChild(div())
+    search.appendChild(top())
+    search.appendChild(options())
     return(search)
 }

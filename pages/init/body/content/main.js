@@ -4,7 +4,7 @@ import search from "./search/main.js"
 export default function content(){
     let style = `
         {
-            width: 75%;
+            width: 100%;
             height: 100%;
             padding: 20px;
             transition: width var(--transitionTime);

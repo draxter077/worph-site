@@ -7,6 +7,6 @@ export default function logo(){
         }`
 
     const logo = cE("div", style)
-    logo.innerHTML = "worph"
+    logo.innerHTML = "&omega;&omicron;r&rho;h"
     return(logo)
 }

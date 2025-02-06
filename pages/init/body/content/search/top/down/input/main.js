@@ -2,15 +2,15 @@ export default function input(){
     let style = `
         {
             width: 100%;
-            border: 1px solid black;
             padding: 5px 10px;
+            border-bottom: 1px solid grey;
         }`
 
     const input = cE("input", style)
     input.placeholder = "Pesquise"
     input.oninput = function a(e){
         const value = e.target.value
-        const options = e.target.parentElement.parentElement.children[1].children
+        const options = e.target.parentElement.parentElement.parentElement.children[1].children
         for(let i = 0; i < options.length; i++){
             for(let j = 0; j < options[i].innerHTML.length - value.length + 1; j++){
                 let optionsText = ""

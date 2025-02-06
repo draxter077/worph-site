@@ -1,20 +1,19 @@
-import input from "./input/main.js"
-import newFolder from "./newFolder/main.js"
-import uploadFile from "./uploadFile/main.js"
+import up from "./up/main.js"
+import down from "./down/main.js"
 
 export default function top(){
     let style = `
         {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            margin: 0px 0px 10px 0px;
         }`
 
     const top = cE("div", style)
-    top.appendChild(input())
-    top.appendChild(newFolder())
-    top.appendChild(uploadFile())
+    top.appendChild(up())
+    top.appendChild(down())
     return(top)
 }

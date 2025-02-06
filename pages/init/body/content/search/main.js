@@ -7,6 +7,9 @@ export default function search(){
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 90%;
+            width: 100%;
+            border-radius: 5px;
         }`
 
     const search = cE("div", style)

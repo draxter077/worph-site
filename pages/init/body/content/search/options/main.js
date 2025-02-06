@@ -6,7 +6,9 @@ export default function options(){
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 450px;
+            border-radius: 5px;
+            padding: 5px 0px;
+            background: white;
             overflow-y: scroll;
             overflow-x: hidden;
         }`

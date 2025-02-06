@@ -8,7 +8,6 @@ export default function option(t){
             display: flex;
             flex-direction: row;
             width: 200%;
-            max-height: 100%;
             transition: translate var(--transitionTime), max-height var(--transitionTime);
             padding: 0px 0px 0px 5px;
             border-left: 1px solid white;

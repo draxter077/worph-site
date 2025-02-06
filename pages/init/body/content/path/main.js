@@ -3,6 +3,9 @@ export default function path(){
         {
             width: 100%;
             margin: 0px 0px 20px 0px;
+            border: 1px solid grey;
+            padding: 10px;
+            border-radius: 5px;
         }`
 
     const path = cE("div", style)

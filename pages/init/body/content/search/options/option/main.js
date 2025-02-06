@@ -18,6 +18,7 @@ export default function option(t){
         }`
 
     const option = cE("div", style)
+    option.id = "9237oqweuy"
     option.appendChild(download())
     option.appendChild(update())
     option.appendChild(title(t))

@@ -9,7 +9,6 @@ export default function top(){
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            margin: 0px 0px 10px 0px;
         }`
 
     const top = cE("div", style)

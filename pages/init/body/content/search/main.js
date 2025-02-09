@@ -1,7 +1,7 @@
 import top from "./top/main.js"
 import options from "./options/main.js"
 
-export default function search(){
+export default function search(content){
     let style = `
         {
             display: flex;
@@ -9,11 +9,10 @@ export default function search(){
             align-items: center;
             height: 90%;
             width: 100%;
-            border-radius: 5px;
         }`
 
     const search = cE("div", style)
     search.appendChild(top())
-    search.appendChild(options())
+    search.appendChild(options(content))
     return(search)
 }

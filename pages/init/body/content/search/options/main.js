@@ -1,23 +1,23 @@
 import option from "./option/main.js"
 
-export default function options(){
+export default function options(content){
     let style = `
         {
             display: flex;
             flex-direction: column;
             width: 100%;
-            border-radius: 5px;
-            padding: 5px 0px;
+            height: 90%;
             background: white;
+            border-bottom: 1px solid grey;
+            margin: 5px 0px 0px 0px;
             overflow-y: scroll;
             overflow-x: hidden;
         }`
 
     const options = cE("div", style)
 
-    let test = ["abc", "bcd", "cde", "def", "efg", "fgh", "ghi", "hij", "ijk", "jkl", "klm"]
-    for(let i = 0; i < test.length; i++){
-        options.appendChild(option(test[i]))
+    for(let i = 0; i < content.length; i++){
+        options.appendChild(option(content[i]))
     }
     return(options)
 }

@@ -10,8 +10,9 @@ export default function top(){
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            height: 7.5%;
             background: linear-gradient(90deg, blue, black);
-            padding: 10px 20px;
+            padding: 0px 20px;
         }`
 
     const top = cE("div", style)

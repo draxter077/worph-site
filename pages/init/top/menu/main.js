@@ -7,7 +7,7 @@ export default function menu(){
             transition: transform var(--transitionTime);
         }
         :hover{
-            transform: rotate(180deg);
+            transform: scale(1.5, 1.5);
         }`
 
     const menu = cE("button", style)

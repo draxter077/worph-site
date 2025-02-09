@@ -15,5 +15,15 @@ export default function newFolder(){
 
     const newFolder = cE("button", style)
     newFolder.innerHTML = "Nova pasta"
+    newFolder.onclick = function a(){
+        let content = document.getElementsByName("content")
+        content.innerHTMl = ""
+        axios.post("http://192.168.0.80:5001/getLocContent", {locID: id}) // FAZER CÓDIGO PARA NOVA PASTA
+            .then(response => {
+                content.appendChild(path(response.data.path))
+                content.appendChild(search(response.data.search))
+            })
+            .catch(error => {window.alert(error)})
+    }  
     return(newFolder)
 }

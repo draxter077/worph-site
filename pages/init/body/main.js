@@ -7,7 +7,7 @@ export default function body(){
             display: flex;
             flex-direction: row;
             width: 100%;
-            height: 100%;
+            height: 92.5%;
         }`
 
     const body = cE("div", style)

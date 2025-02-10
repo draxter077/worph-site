@@ -18,6 +18,11 @@ export default function path(c){
 
     const path = cE("div", style)
     path.id = c.id
-    path.appendChild(option(c.name))
+    for(let i = 0; i < c.options.length; i++){
+        path.appendChild(option(c.options[i].name, c.options[i].id))
+        if(i != c.options.length - 1){
+            path.innerHTML += ">"
+        }
+    }
     return(path)
 }

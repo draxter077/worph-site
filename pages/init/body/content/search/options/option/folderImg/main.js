@@ -13,14 +13,14 @@ export default function folderImg(id){
     const folderImg = cE("img", style)
     folderImg.src = "./folder.png"
     folderImg.onclick = function a(){
-        let content = document.getElementsByName("content")
-        content.innerHTMl = ""
+        let content = document.getElementById("content")
+        content.innerHTML = ""
         axios.post("http://192.168.0.80:5001/getLocContent", {locID: id})
             .then(response => {
                 content.appendChild(path(response.data.path))
                 content.appendChild(search(response.data.search))
             })
-            .catch(error => {window.alert(error)})
+            .catch(error => {window.alert(error); console.log(error)})
     }
     return(folderImg)
 }

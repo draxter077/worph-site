@@ -1,6 +1,6 @@
 import option from "./option/main.js"
 
-export default function path(id){
+export default function path(c){
     let style = `
         {
             display: flex;
@@ -18,7 +18,7 @@ export default function path(id){
 
     const path = cE("div", style)
     path.name = "path"
-    path.id = id
+    path.id = c.id
     
     let a = ["Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta"]
     path.appendChild(option("Main"))

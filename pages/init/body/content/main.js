@@ -12,16 +12,11 @@ export default function content(){
 
     const content = cE("div", style)
     content.name = "content"
-    content.appendChild(path("main"))
-    //axios.post("http://192.168.0.80:5001/getLocContent", {locID: "main"})
-    //    .then(response => {
-    //        content.appendChild(search(response.data))
-    //    })
-    //    .catch(error => {window.alert(error)})
-    content.appendChild(search(
-        [{type: "folder", id: "123", name: "folder1"},
-        {type: "file", id: "123", name: "file1"}
-        ]
-    ))
+    axios.post("http://192.168.0.80:5001/getLocContent", {locID: "main"})
+        .then(response => {
+            content.appendChild(path(response.data.path))
+            content.appendChild(search(response.data.search))
+        })
+        .catch(error => {window.alert(error)})
     return(content)
 }

@@ -18,11 +18,8 @@ export default function newFolder(){
     newFolder.onclick = function a(){
         let content = document.getElementsByName("content")
         content.innerHTMl = ""
-        axios.post("http://192.168.0.80:5001/getLocContent", {locID: id}) // FAZER CÓDIGO PARA NOVA PASTA
-            .then(response => {
-                content.appendChild(path(response.data.path))
-                content.appendChild(search(response.data.search))
-            })
+        axios.post("http://192.168.0.80:5001/postFolder", {folderName: "Teste1234", locID: id})
+            .then(response => {console.log(response)})
             .catch(error => {window.alert(error)})
     }  
     return(newFolder)

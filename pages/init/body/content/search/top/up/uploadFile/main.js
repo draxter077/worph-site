@@ -26,7 +26,7 @@ export default function uploadFile(){
             if(file != undefined){
                 formData.append("file", file);
                 await axios.post('http://192.168.0.80:5001/postFile', formData, {headers: {'Content-Type': 'multipart/form-data', locID: document.getElementById("content").children[0].id, fileID: undefined}})
-                    .then(response => {window.alert("O arquivo " + file.name + " foi adicionado com sucesso a esta pasta")})
+                    .then(response => {window.alert("O arquivo " + file.name + " foi adicionado com sucesso a esta pasta"); document.getElementById("content").children[0].children[0].click()})
                     .catch(error => {window.alert(error); console.log(error)})
             }
             else{window.alert("Nenhum arquivo selecionado!")}

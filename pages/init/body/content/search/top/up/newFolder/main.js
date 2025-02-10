@@ -19,7 +19,7 @@ export default function newFolder(){
         let content = document.getElementsByName("content")
         content.innerHTMl = ""
         axios.post("http://192.168.0.80:5001/postFolder", {folderName: window.prompt("Digite o nome da pasta"), locID: document.getElementById("content").children[0].id})
-            .then(response => {window.alert("A pasta foi criada com sucesso na atual")})
+            .then(response => {window.alert("A pasta foi criada com sucesso na atual"); document.getElementById("content").children[0].children[0].click()})
             .catch(error => {window.alert(error); console.log(error)})
     }  
     return(newFolder)

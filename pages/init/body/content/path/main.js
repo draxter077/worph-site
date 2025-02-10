@@ -17,14 +17,7 @@ export default function path(c){
         }`
 
     const path = cE("div", style)
-    path.name = "path"
     path.id = c.id
-    
-    let a = ["Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta", "Pasta"]
-    path.appendChild(option("Main"))
-    for(let i = 0; i < a.length; i++){
-        path.innerHTML += ">"
-        path.appendChild(option(a[i], "123"))
-    }
+    path.appendChild(option(c.name))
     return(path)
 }

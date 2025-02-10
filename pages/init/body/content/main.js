@@ -11,7 +11,7 @@ export default function content(){
         }`
 
     const content = cE("div", style)
-    content.name = "content"
+    content.id = "content"
     axios.post("http://192.168.0.80:5001/getLocContent", {locID: "main"})
         .then(response => {
             content.appendChild(path(response.data.path))

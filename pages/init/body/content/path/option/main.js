@@ -12,7 +12,7 @@ export default function option(t, id){
     option.onclick = function a(){
         let content = document.getElementById("content")
         content.innerHTML = ""
-        axios.post("http://192.168.0.80:5001/getLocContent", {locID: id})
+        axios.post(apiAddress + "/getLocContent", {locID: id})
             .then(response => {
                 content.appendChild(path(response.data.path))
                 content.appendChild(search(response.data.search))

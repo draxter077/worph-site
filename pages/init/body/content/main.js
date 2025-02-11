@@ -12,7 +12,7 @@ export default function content(){
 
     const content = cE("div", style)
     content.id = "content"
-    axios.post("http://192.168.0.80:5001/getLocContent", {locID: "main"})
+    axios.post(apiAddress + "/getLocContent", {locID: "main"})
         .then(response => {
             content.appendChild(path(response.data.path))
             content.appendChild(search(response.data.search))

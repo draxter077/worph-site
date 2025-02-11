@@ -1,5 +1,7 @@
 import construct from "./pages/construct.js"
 
+window.apiAddress = "https://discrete-wildly-cub.ngrok-free.app"
+
 window.cE = function cE(t, stl){
     function addClass(){
         function randomName(names){

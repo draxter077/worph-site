@@ -13,7 +13,7 @@ export default function download(){
         const fileID = Event.target.parentElement.id
         const fileName = Event.target.parentElement.children[2].innerHTML
         const fileExt = fileName.split(".")[1]
-        axios.post("http://192.168.0.80:5001/getFile", {fileID: fileID}, {responseType: "blob"})
+        axios.post(apiAddress + "/getFile", {fileID: fileID}, {responseType: "blob"})
             .then(response => {
                 const file = new File([response.data], fileName, {type: mimeType[fileExt]})
                 var link = document.createElement('a');

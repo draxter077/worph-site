@@ -14,7 +14,6 @@ export default function head(){
             background:var(--colorBlue);
         }
         :responsive{
-            flex-direction:column;
             padding:10px 15px 15px;
         }`
 

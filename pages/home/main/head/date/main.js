@@ -5,17 +5,15 @@ export default function date(){
             color:var(--colorWhite);
             width:30%;
             text-align:right;
-        }
-        :responsive{
-            display:none;
         }`
 
     const date = cE("div",style)
-    date.innerHTML = "Seja bem-vindo"
 
-    window.addEventListener(
-        "load",
-        async () => {
+    const ev = new Event("startI")
+    date.addEventListener(
+        "startI",
+        async function a(){
+            date.removeEventListener("startI",a)
             while(true){
                 let d = new Date()
                 let day = d.getDate()
@@ -39,5 +37,6 @@ export default function date(){
             }
         }
     )
+    date.dispatchEvent(ev)
     return(date)
 }

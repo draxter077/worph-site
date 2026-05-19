@@ -7,11 +7,8 @@ export default function menu(){
             cursor:pointer;
             transition:all 0.5s;
         }
-        :responsive{
-            margin:2.5% 0px 0px 0px;
-        }
         :hover{
-            transform:rotate(-90deg);
+            transform:rotate(90deg);
         }`
 
     const menu = cE("img",style)

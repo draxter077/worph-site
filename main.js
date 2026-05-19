@@ -1,8 +1,5 @@
 import main from "./pages/main/main.js"
-import plan_sade from "./pages/plan_sade/main.js"
-import contract_plan_sade from "./pages/contract_plan_sade/main.js"
-
-import client from "./pages/client/main.js"
+import home from "./pages/home/main.js"
 import admin from "./pages/admin/main.js"
 
 export function randomName(names){
@@ -198,30 +195,24 @@ window.construct = async function construct(d){
         root.innerHTML = ""
         if(window.location.href.split("br/")[1]){
             let path = window.location.href.split("br/")[1]
-            if(path == "plano_completo"){root.appendChild(plan_sade())}
-            else if(path == "plano_completo/pedido"){root.appendChild(contract_plan_sade())}
-            else if(path == "cliente"){root.appendChild(client())}
+            if(path == "home"){root.appendChild(home())}
             else if(path == "admin"){root.appendChild(admin())}
-            else{root.appendChild(main())}
+            else{root.appendChild(home())}
         }
-        else{root.appendChild(main())}
+        else{root.appendChild(home())}
     }
     else{
         root.style.opacity = 0
         await new Promise(r => setTimeout(r,600))
         root.innerHTML = ""
-        if(d.page == "client"){
-            root.appendChild(client(d.data))
-        }
-        else if(d.page == "admin"){
-            root.appendChild(admin(d.data))
-        }
+        if(d.page == "home"){root.appendChild(home(d.data))}
+        else if(d.page == "admin"){root.appendChild(admin(d.data))}
         await new Promise(r => setTimeout(r,100))
         root.style.opacity = 1
     }
 }
 
-window.api_url = "https://ace-chimp-merry.ngrok-free.app/ph"
+window.api_url = "https://ace-chimp-merry.ngrok-free.app/worph"
 window.whatsapp_url = "https://wa.me"
 window.instagram_url = "https://www.instagram.com/phwebsoftware"
 axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"

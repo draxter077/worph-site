@@ -17,7 +17,10 @@ export default function menu(){
 
     menu.addEventListener(
         "click",
-        () => {document.getElementById("menu").style.transform = "translateX(0%)"}
+        () => {
+            document.getElementById("menu").style.transform = "translateX(0%)"
+            document.getElementById("menu").style.opacity = "1"
+        }
     )
     return(menu)
 }

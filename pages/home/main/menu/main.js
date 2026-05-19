@@ -1,3 +1,5 @@
+import bar from "./bar/main.js"
+
 export default function menu(){
     let style = `
         {
@@ -5,20 +7,16 @@ export default function menu(){
             top:0%;
             left:0%;
             width:100%;
-            height:100svh;
-            background:rgb(0,0,0,0.4);
+            height:100%;
+            background:rgb(0,0,0,0.6);
             z-index:3;
             transition:all 0.5s;
             transform:translateX(-100%);
+            opacity:0;
         }`
 
     const menu = cE("div",style)
     menu.id = "menu"
-    menu.addEventListener(
-        "click",
-        () => {
-            menu.style.transform = "translateX(-100%)"
-        }
-    )
+    menu.appendChild(bar())
     return(menu)
 }

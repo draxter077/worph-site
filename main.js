@@ -197,7 +197,7 @@ window.construct = async function construct(d){
             let path = window.location.href.split("br/")[1]
             if(path == "home"){root.appendChild(home())}
             else if(path == "admin"){root.appendChild(admin())}
-            else{root.appendChild(home())}
+            else{root.appendChild(main())}
         }
         else{root.appendChild(home())}
     }

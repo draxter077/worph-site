@@ -10,11 +10,6 @@ export default function head(){
             align-items:center;
             justify-content:space-around;
             width:100%;
-            padding:10px 15px;
-            background:var(--colorBlue);
-        }
-        :responsive{
-            padding:10px 15px 15px;
         }`
 
     const head = cE("div",style)

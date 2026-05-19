@@ -32,7 +32,7 @@ export default function date(){
                 let seconds = d.getSeconds()
                 if(seconds < 10){seconds = "0" + seconds}
 
-                date.innerHTML = `${weekDays[weekDay]}, ${hour}:${minutes}<br>${day}/${month}/${year}`
+                date.innerHTML = `${weekDays[weekDay]}, ${hour}:${minutes}:${seconds}<br>${day}/${month}/${year}`
                 await new Promise(r => setTimeout(r,1000))
             }
         }

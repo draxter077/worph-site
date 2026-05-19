@@ -1,7 +1,6 @@
-import head from "./head/main.js"
-import content from "./content/main.js"
-import foot from "./foot/main.js"
-import menu from "./menu/main.js"
+import status from "./status/main.js"
+import data from "./data/main.js"
+import databases from "./databases/main.js"
 
 export default function main(d){
     let style = `
@@ -12,13 +11,12 @@ export default function main(d){
             justify-content:space-between;
             align-items:center;
             width:100%;
-            height:100svh;
+            height:100%;
         }`
 
     const main = cE("div",style)
-    main.appendChild(head())
-    main.appendChild(content(d))
-    main.appendChild(foot())
-    main.appendChild(menu())
+    main.appendChild(status())
+    main.appendChild(data())
+    main.appendChild(databases())
     return(main)
 }

@@ -8,7 +8,7 @@ export default function menu(){
             transition:all 0.5s;
         }
         :responsive{
-            margin:2.5% calc(30% - 35px) 0px 0px;
+            margin:2.5% 0px 0px 0px;
         }
         :hover{
             transform:rotate(-90deg);

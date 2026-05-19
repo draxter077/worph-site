@@ -5,6 +5,9 @@ export default function date(){
             color:var(--colorWhite);
             width:30%;
             text-align:right;
+        }
+        :responsive{
+            display:none;
         }`
 
     const date = cE("div",style)

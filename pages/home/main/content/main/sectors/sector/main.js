@@ -5,17 +5,22 @@ export default function sector(src, t, e){
     let style = `
         {
             display:flex;
-            flex-direction:row;
+            flex-direction:column;
             align-items:center;
-            justify-content:flex-start;
-            width:100%;
+            justify-content:center;
+            width:30%;
             cursor:pointer;
-            border-bottom:1px solid var(--colorWhite);
-            padding:10px 15px;
+            background:var(--colorBlue);
+            box-shadow:0px 0px 3px 0px var(--colorBlue);
+            margin:10px;
+            border-radius:10px;
             transition:all 0.25s;
         }
         :hover{
-            background:var(--colorBlue);
+            transform:scale(1.05);
+        }
+        :responsive{
+            width:40%;
         }`
 
     const sector = cE("div",style)
@@ -25,12 +30,10 @@ export default function sector(src, t, e){
     sector.addEventListener(
         "click",
         async function a(){
-            let cs = document.getElementById("content").children
-            for(let i = 0; i < cs.length; i++){
-                cs[i].style.opacity = "0"
-            }
-            document.getElementById("menu").children[0].children[0].children[1].click()
+            document.getElementById(e).style.display = "flex"
+            document.getElementById("main").style.opacity = "0"
             await new Promise(r => setTimeout(r,550))
+            document.getElementById("main").style.display = "none"
             document.getElementById(e).style.opacity = "1"
         }
     )

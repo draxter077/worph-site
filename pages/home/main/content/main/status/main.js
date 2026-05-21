@@ -1,21 +1,25 @@
-import item from "./item/main.js"
+import stat from "./stat/main.js"
+import events from "./events/main.js"
 
 export default function status(){
     let style = `
         {
             display:flex;
             flex-direction:row;
-            justify-content:space-around;
+            justify-content:space-between;
             align-items:center;
+            flex-wrap:wrap;
             width:80%;
         }
         :responsive{
-            flex-direction:column;
+            width:95%;
         }`
 
     const status = cE("div",style)
-    status.appendChild(item("Domínio .br","domain.com.br"))
-    status.appendChild(item("Site profissional","https://www.domain.com.br"))
-    status.appendChild(item("E-mail corporativo","@domain.com.br"))
+    let d = new Date().getMonth()
+    let months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
+    status.appendChild(stat(`Faturamento de ${months[d]}`,"R$ 000,00"))
+    status.appendChild(stat("Tasks em andamento","00"))
+    status.appendChild(events("Próximos eventos"))
     return(status)
 }

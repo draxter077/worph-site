@@ -4,14 +4,15 @@ export default function sectors(){
     let style = `
         {
             display:flex;
-            flex-direction:column;
+            flex-direction:row;
+            justify-content:space-around;
+            flex-wrap:wrap;
             width:100%;
             height:100%;
             padding:10px;
         }`
 
     const sectors = cE("div",style)
-    sectors.appendChild(sector("/assets/icons/terminal.png", "Console", "main"))
     sectors.appendChild(sector("/assets/icons/finance.png", "Financeiro", "finance"))
     sectors.appendChild(sector("/assets/icons/team.png", "Recursos humanos", "hr"))
     sectors.appendChild(sector("/assets/icons/tasks.png", "Processos", "tasks"))

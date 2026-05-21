@@ -19,6 +19,6 @@ export default function main(d){
     main.appendChild(head())
     main.appendChild(content(d))
     main.appendChild(foot())
-    main.appendChild(menu())
+    //main.appendChild(menu())
     return(main)
 }

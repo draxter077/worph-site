@@ -15,11 +15,27 @@ export default function menu(){
     menu.src = "/assets/icons/menu.png"
     menu.alt = "Ícone de menu"
 
+    // menu.addEventListener(
+    //     "click",
+    //     () => {
+    //         document.getElementById("menu").style.transform = "translateX(0%)"
+    //         document.getElementById("menu").style.opacity = "1"
+    //     }
+    // )
     menu.addEventListener(
         "click",
-        () => {
-            document.getElementById("menu").style.transform = "translateX(0%)"
-            document.getElementById("menu").style.opacity = "1"
+        async function a(){
+            let cs = document.getElementById("content").children
+            for(let i = 0; i < cs.length; i++){
+                if(cs[i].style.display == "flex"){
+                    document.getElementById("main").style.display = "flex"
+                    cs[i].style.opacity = "0"
+                    await new Promise(r => setTimeout(r,550))
+                    cs[i].style.display = "none"
+                    document.getElementById("main").style.opacity = "1"
+                    break
+                }
+            }
         }
     )
     return(menu)

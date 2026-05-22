@@ -1,3 +1,7 @@
+import status from "./status/main.js"
+import stats from "./stats/main.js"
+import transactions from "./transactions/main.js"
+
 export default function finance(d){
     let style = `
         {
@@ -9,14 +13,16 @@ export default function finance(d){
             justify-content:space-between;
             align-items:center;
             width:100%;
-            height:100%;
-            background:orange;
+            height:fit-content;
+            padding:1% 0px;
             opacity:0;
             transition:all 0.5s;
         }`
 
     const finance = cE("div",style)
     finance.id = "finance"
-    finance.innerHTML = 'Finance'
+    finance.appendChild(status(d.payments.reverse()))
+    finance.appendChild(stats())
+    finance.appendChild(transactions(d.payments))
     return(finance)
 }

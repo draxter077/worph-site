@@ -9,7 +9,9 @@ export default function id(){
             align-items:center;
         }`
 
-    const id = cE("div",style)
+    const id = cE("a",style)
+    id.href = "https://www.ph.net.br"
+    id.target = "_blank"
     id.appendChild(logo())
     id.appendChild(text())
     return(id)

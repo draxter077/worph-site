@@ -6,10 +6,14 @@ export default function sectors(){
             display:flex;
             flex-direction:row;
             justify-content:space-around;
+            align-items:center;
             flex-wrap:wrap;
-            width:100%;
+            width:50%;
             height:100%;
             padding:10px;
+        }
+        :responsive{
+            width:80%;
         }`
 
     const sectors = cE("div",style)

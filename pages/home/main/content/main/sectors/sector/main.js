@@ -9,15 +9,16 @@ export default function sector(src, t, e){
             align-items:center;
             justify-content:center;
             width:30%;
+            aspect-ratio:1;
             cursor:pointer;
             background:var(--colorBlue);
+            border-radius:5px;
             box-shadow:0px 0px 3px 0px var(--colorBlue);
             margin:10px;
-            border-radius:10px;
             transition:all 0.25s;
         }
         :hover{
-            transform:scale(1.05);
+            transform:scale(1.025);
         }
         :responsive{
             width:40%;

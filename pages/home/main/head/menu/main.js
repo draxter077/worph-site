@@ -5,10 +5,10 @@ export default function menu(){
             margin:0px calc(30% - 35px) 0px 0px;
             filter:invert(1);
             cursor:pointer;
-            transition:all 0.5s;
+            transition:all 0.25s;
         }
         :hover{
-            transform:rotate(90deg);
+            transform:scale(1.1);
         }`
 
     const menu = cE("img",style)
@@ -27,7 +27,7 @@ export default function menu(){
         async function a(){
             let cs = document.getElementById("content").children
             for(let i = 0; i < cs.length; i++){
-                if(cs[i].style.display == "flex"){
+                if(cs[i].style.display == "flex" && cs[i].id != "main"){
                     document.getElementById("main").style.display = "flex"
                     cs[i].style.opacity = "0"
                     await new Promise(r => setTimeout(r,550))
